@@ -30,16 +30,25 @@ body {
 #container {
   background: url('/images/hipster_shiet.png') top no-repeat;
   min-height: inherit;
+  font-family: 'dejavu_sansbook';
+  color: white;
 }
 
 #logo {
-  font-family: 'dejavu_sansbook';
-  color: white;
   font-size: 24px;
   padding-top: 100px;
+  margin-bottom: 100px;
   text-align: center;
 
   .cap {
     font-size: 48px;
+  }
+}
+
+#sign-in {
+  text-align: center;
+
+  p {
+    margin-bottom: 70px;
   }
 }
