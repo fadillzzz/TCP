@@ -33,6 +33,8 @@ module.exports.routes = {
   ***************************************************************************/
 
   'get /': 'MainController.index',
+  'get /login': 'AuthController.login',
+  'get /verify': 'AuthController.verify',
 
   /***************************************************************************
   *                                                                          *
