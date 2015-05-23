@@ -6,7 +6,8 @@
  */
 
 var Account = require('../tcp/Account.js'),
-    SteamAccount = require('../tcp/SteamAccount.js');
+    SteamAccount = require('../tcp/SteamAccount.js'),
+    SteamAPI = require('../tcp/SteamAPI.js');
 
 module.exports = {
   /**
@@ -53,8 +54,14 @@ module.exports = {
     {
       if ( ! error && result.authenticated) {
         req.session.authenticated = true;
-        req.session.user = new Account(new SteamAccount(result.claimedIdentifier.match(/\d+/)[0]));
-        res.redirect('/');
+        req.session.user = new Account(new SteamAccount(
+          result.claimedIdentifier.match(/\d+/)[0],
+          new SteamAPI(sails.config.steam.key)
+        ));
+
+        req.session.user.getSteamAccount().init(function () {
+          res.redirect('/');
+        });
       } else {
         res.json({dude: "whaddyawan"});
       }

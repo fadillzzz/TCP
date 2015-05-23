@@ -38,10 +38,31 @@
       <div id="logo">
         <span class="cap">T</span>he <span class="cap">C</span>asino <span class="cap">P</span>arty
       </div>
-      <div class="content" ng-app="TCP" ng-view>
+      <div class="content">
+        <div ng-app="TCP">
+          <% if (req.session.authenticated) { %>
+            <script>
+              var user = {
+                name: '<%= req.session.user.steam.name %>',
+                avatar: '<%= req.session.user.steam.avatar %>',
+                profile: '<%= req.session.user.steam.profileUrl %>'
+              };
+            </script>
+            <section id="sidebar">
+              <div id="avatar-container">
+                <img src="<%= req.session.user.steam.avatar %>" id="avatar" />
+                <p class="user-sum">
+                  <%= req.session.user.steam.name %>
+                  <br />
+                  0 coins
+                </p>
+              </div>
+            </section>
+          <% } %>
+          <div ng-view class="<%= req.session.authenticated ? 'auth-restricted-content' : '' %>"></div>
+        </div>
       </div>
     </div>
-
 
 
     <!--
@@ -92,7 +113,6 @@
           + Use a different preprocessor, like TypeScript
 
     -->
-
     <!--SCRIPTS-->
     <script src="/js/script.js"></script>
     <!--SCRIPTS END-->
