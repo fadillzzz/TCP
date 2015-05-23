@@ -4,7 +4,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concatenate = require('gulp-concat'),
     assets = {
-      styles: {src: 'assets/styles/*.scss', dst: '.tmp/public/styles', file: 'style.css'},
+      styles: {src: ['bower_components/normalize.css/normalize.css', 'assets/styles/*.scss'], dst: '.tmp/public/styles', file: 'style.css'},
       js: {
         src: [
           'assets/js/dependencies/sails.io.js',
