@@ -79,6 +79,34 @@ body {
   padding-top: 5%;
   margin-top: 5%;
   text-align: center;
+
+  ul li {
+    list-style: none;
+    border-bottom: 1px solid white;
+    width: 70%;
+    margin-left: 25%;
+    padding-left: 5%;
+    text-align: left;
+    transition: margin-left 0.5s ease, padding-left 0.5s ease;
+
+    .fa {
+      width: 20px;
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        color: white;
+      }
+    }
+
+    &:hover {
+      margin-left: 0%;
+      padding-left: 30%;
+    }
+  }
 }
 
 #avatar-container {

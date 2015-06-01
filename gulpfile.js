@@ -4,7 +4,15 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concatenate = require('gulp-concat'),
     assets = {
-      styles: {src: ['bower_components/normalize.css/normalize.css', 'assets/styles/*.scss'], dst: '.tmp/public/styles', file: 'style.css'},
+      styles: {
+        src: [
+          'bower_components/normalize.css/normalize.css',
+          'bower_components/font-awesome/css/font-awesome.css',
+          'assets/styles/*.scss'
+        ],
+        dst: '.tmp/public/styles',
+        file: 'style.css'
+      },
       js: {
         src: [
           'assets/js/dependencies/sails.io.js',
@@ -15,7 +23,7 @@ var gulp = require('gulp'),
         dst: '.tmp/public/js',
         file: 'script.js'
       },
-      fonts: {src: 'assets/fonts/*', dst: '.tmp/public/fonts'},
+      fonts: {src: ['assets/fonts/*', 'bower_components/font-awesome/fonts/*'], dst: '.tmp/public/fonts'},
       images: {src: 'assets/images/*', dst: '.tmp/public/images'},
       templates: {src: 'assets/templates/*', dst: '.tmp/public/templates'},
     };
