@@ -1,11 +1,11 @@
-<section id="profile-info">
+<section id="profile-info" ng-controller="ProfileController">
   <h1>
     <span class="cap">Y</span>our <span class="cap">P</span>rofile
   </h1>
   <p>
-    Name: DUMMY_NAME
+    Name: {{ steam.name }}
     <br />
-    Steam profile: DUMMY_URL
+    Steam profile: <a href="{{ steam.profileUrl }}">{{ steam.profileUrl }}</a>
     <br />
     Party Coins: 0 coins
   </p>

@@ -42,11 +42,7 @@
         <div ng-app="TCP">
           <% if (req.session.authenticated) { %>
             <script>
-              var user = {
-                name: '<%= req.session.user.steam.name %>',
-                avatar: '<%= req.session.user.steam.avatar %>',
-                profile: '<%= req.session.user.steam.profileUrl %>'
-              };
+              var auth = true;
             </script>
             <section id="sidebar">
               <div id="avatar-container">
